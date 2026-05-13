@@ -4,128 +4,460 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Alimentación saludable para personas con enfermedades crónicas — Resumen Minsalud</title>
+
   <style>
-    :root{--bg:#f6fbf7;--card:#fff;--accent:#1b6b48;--muted:#556}
-    body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:#222;margin:0;padding:20px}
-    .wrap{max-width:1000px;margin:0 auto}
-    header{display:flex;align-items:center;gap:16px}
-    h1{margin:0;color:var(--accent);font-size:1.8rem}
-    .lead{color:var(--muted);margin-top:6px}
-    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(20,40,30,0.06);margin-top:18px}
-    h2{color:var(--accent)}
-    ul{line-height:1.6}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    .sidebar{position:sticky;top:20px}
-    .btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none}
-    footer{font-size:0.85rem;color:var(--muted);text-align:center;margin-top:20px;padding-bottom:20px}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:8px;border:1px solid #e8efe8;text-align:left}
+    :root{
+      --bg:#f6fbf7;
+      --card:#fff;
+      --accent:#1b6b48;
+      --muted:#556;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:#222;
+      margin:0;
+      padding:20px;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    header{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      margin-bottom:20px;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      padding:40px;
+      color:white;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    h1{
+      margin:0;
+      font-size:2.3rem;
+      line-height:1.2;
+    }
+
+    .lead{
+      margin-top:10px;
+      font-size:1.05rem;
+      max-width:700px;
+      color:#f1f1f1;
+    }
+
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(20,40,30,0.06);
+      margin-top:18px;
+    }
+
+    h2{
+      color:var(--accent);
+      margin-top:0;
+    }
+
+    h3{
+      color:#245c44;
+    }
+
+    ul{
+      line-height:1.7;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:20px;
+    }
+
+    .sidebar{
+      position:sticky;
+      top:20px;
+      height:fit-content;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      background:var(--accent);
+      color:white;
+      border-radius:8px;
+      text-decoration:none;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#145235;
+    }
+
+    footer{
+      font-size:0.9rem;
+      color:var(--muted);
+      text-align:center;
+      margin-top:30px;
+      padding-bottom:20px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:12px;
+    }
+
+    th,td{
+      padding:10px;
+      border:1px solid #e8efe8;
+      text-align:left;
+    }
+
+    th{
+      background:#eef7f1;
+    }
+
+    .section-image{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:18px;
+    }
+
+    .mini-img{
+      width:100%;
+      border-radius:12px;
+      margin-top:12px;
+    }
+
+    .tips-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+      margin-top:15px;
+    }
+
+    .tip-box{
+      background:#f2faf5;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid #e0eee5;
+    }
+
+    .tip-box img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+    }
+
+    .tip-box p{
+      padding:12px;
+      margin:0;
+    }
+
+    @media(max-width:900px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        position:relative;
+      }
+
+      header{
+        min-height:260px;
+        padding:25px;
+      }
+
+      h1{
+        font-size:1.8rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="wrap">
+
     <header>
       <div>
         <h1>Alimentación saludable para personas con enfermedades crónicas</h1>
-        <div class="lead">Guía práctica basada en recomendaciones del Ministerio de Salud y Protección Social de Colombia (Minsalud) para pacientes con diabetes, hipertensión, obesidad y otras enfermedades crónicas.</div>
+
+        <div class="lead">
+          Guía práctica basada en recomendaciones del Ministerio de Salud y Protección Social de Colombia (Minsalud) para pacientes con diabetes, hipertensión, obesidad y otras enfermedades crónicas.
+        </div>
       </div>
     </header>
 
     <div class="grid">
+
       <main>
+
         <section class="card">
+
+          <img
+            class="section-image"
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop"
+            alt="Alimentación saludable"
+          >
+
           <h2>Principios generales</h2>
-          <p>Las personas con enfermedades crónicas (diabetes, hipertensión, obesidad, enfermedad cardiovascular, etc.) se benefician de una alimentación que controle la ingesta de azúcares simples, sodio y grasas saturadas, y que aumente el consumo de fibra, frutas, verduras y fuentes proteicas magras. Además, la alimentación debe adaptarse a las necesidades individuales: edad, medicación, actividad física y comorbilidades.</p>
+
+          <p>
+            Las personas con enfermedades crónicas (diabetes, hipertensión, obesidad, enfermedad cardiovascular, etc.) se benefician de una alimentación que controle la ingesta de azúcares simples, sodio y grasas saturadas, y que aumente el consumo de fibra, frutas, verduras y fuentes proteicas magras.
+          </p>
+
+          <p>
+            Además, la alimentación debe adaptarse a las necesidades individuales: edad, medicación, actividad física y comorbilidades.
+          </p>
+
         </section>
 
         <section class="card">
+
+          <img
+            class="section-image"
+            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200&auto=format&fit=crop"
+            alt="Frutas y verduras saludables"
+          >
+
           <h2>Recomendaciones por condición</h2>
 
           <h3>Diabetes</h3>
+
           <ul>
-            <li>Controlar las porciones de carbohidratos y preferir carbohidratos complejos (cereales integrales, legumbres).</li>
-            <li>Evitar azúcares libres y bebidas azucaradas; preferir frutas enteras en porciones moderadas.</li>
-            <li>Distribuir la ingesta en varias comidas al día y coordinar con el tratamiento insulínico o antidiabético.</li>
+            <li>Controlar las porciones de carbohidratos y preferir carbohidratos complejos.</li>
+            <li>Evitar azúcares libres y bebidas azucaradas.</li>
+            <li>Distribuir la ingesta en varias comidas al día.</li>
           </ul>
 
           <h3>Hipertensión</h3>
+
           <ul>
-            <li>Reducir el consumo de sal: usar hierbas, especias y limón como sazonadores alternativos.</li>
-            <li>Limitar alimentos procesados y conservas, y elegir productos bajos en sodio.</li>
-            <li>Incrementar alimentos ricos en potasio (frutas y verduras) cuando su médico lo indique.</li>
+            <li>Reducir el consumo de sal y alimentos procesados.</li>
+            <li>Usar hierbas y limón como alternativas.</li>
+            <li>Incrementar frutas y verduras cuando el médico lo indique.</li>
           </ul>
 
           <h3>Obesidad</h3>
+
           <ul>
-            <li>Priorizar alimentos con alta densidad nutricional y menor densidad calórica: verduras, frutas, legumbres y proteínas magras.</li>
-            <li>Control de porciones y reducir alimentos ultraprocesados, bebidas azucaradas y grasas trans.</li>
-            <li>Combinar intervención alimentaria con actividad física y seguimiento profesional.</li>
+            <li>Priorizar alimentos de alta densidad nutricional.</li>
+            <li>Reducir ultraprocesados y bebidas azucaradas.</li>
+            <li>Combinar dieta con actividad física.</li>
           </ul>
+
         </section>
 
         <section class="card">
+
+          <img
+            class="section-image"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop"
+            alt="Plato saludable"
+          >
+
           <h2>Plan de alimentación ejemplo (diario)</h2>
+
           <table>
             <thead>
-              <tr><th>Momento</th><th>Ejemplo</th></tr>
+              <tr>
+                <th>Momento</th>
+                <th>Ejemplo</th>
+              </tr>
             </thead>
+
             <tbody>
-              <tr><td>Desayuno</td><td>Avena con leche descremada, 1/2 fruta y una cucharada de semillas</td></tr>
-              <tr><td>Media mañana</td><td>Yogur natural sin azúcar o una porción de fruta</td></tr>
-              <tr><td>Almuerzo</td><td>Arroz integral (1/2 taza), pechuga de pollo a la plancha, ensalada variada</td></tr>
-              <tr><td>Merienda</td><td>Zanahorias baby o 1 porción de fruta</td></tr>
-              <tr><td>Cena</td><td>Sopa de verduras y filete de pescado, porción pequeña de tubérculo</td></tr>
+              <tr>
+                <td>Desayuno</td>
+                <td>Avena con leche descremada, fruta y semillas</td>
+              </tr>
+
+              <tr>
+                <td>Media mañana</td>
+                <td>Yogur natural sin azúcar o fruta</td>
+              </tr>
+
+              <tr>
+                <td>Almuerzo</td>
+                <td>Arroz integral, pollo a la plancha y ensalada</td>
+              </tr>
+
+              <tr>
+                <td>Merienda</td>
+                <td>Zanahorias baby o fruta</td>
+              </tr>
+
+              <tr>
+                <td>Cena</td>
+                <td>Sopa de verduras y pescado</td>
+              </tr>
             </tbody>
           </table>
-          <p style="margin-top:8px">Este es un ejemplo orientativo. Las porciones y alimentos deben ajustarse por profesional de salud.</p>
+
+          <p style="margin-top:10px">
+            Este es un ejemplo orientativo. Las porciones deben ajustarse por un profesional de salud.
+          </p>
+
         </section>
 
         <section class="card">
+
           <h2>Consejos prácticos</h2>
+
+          <div class="tips-grid">
+
+            <div class="tip-box">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1000&auto=format&fit=crop"
+                alt="Comida saludable"
+              >
+              <p>Consumir frutas y verduras diariamente.</p>
+            </div>
+
+            <div class="tip-box">
+              <img
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000&auto=format&fit=crop"
+                alt="Planificación de comidas"
+              >
+              <p>Planificar las comidas y cocinar en casa.</p>
+            </div>
+
+            <div class="tip-box">
+              <img
+                src="https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1000&auto=format&fit=crop"
+                alt="Hidratación saludable"
+              >
+              <p>Mantener hidratación adecuada con agua.</p>
+            </div>
+
+          </div>
+
           <ul>
-            <li>Planificar las comidas y cocinar en casa para controlar ingredientes.</li>
-            <li>Leer etiquetas nutricionales: vigilar sodio, azúcares y grasas saturadas.</li>
-            <li>Mantener hidratación con agua; evitar bebidas azucaradas.</li>
-            <li>Buscar apoyo multidisciplinario: nutricionista, médico y actividad física supervisada.</li>
-            <li>Si toma medicamentos, coordinar horarios de comidas según indicación médica.</li>
+            <li>Leer etiquetas nutricionales.</li>
+            <li>Evitar bebidas azucaradas.</li>
+            <li>Buscar apoyo profesional.</li>
+            <li>Coordinar comidas con medicamentos.</li>
           </ul>
+
         </section>
 
         <section class="card">
+
           <h2>Recursos y referencias</h2>
-          <p>Consulte las guías y materiales del Ministerio de Salud para información completa y actualizada. A continuación se listan recursos útiles:</p>
+
+          <p>
+            Consulte las guías y materiales del Ministerio de Salud para información completa y actualizada.
+          </p>
+
           <ul>
-            <li><a href="https://www.minsalud.gov.co/" target="_blank" rel="noopener">Ministerio de Salud y Protección Social</a></li>
-            <li><a href="https://www.minsalud.gov.co/salud/publica/HS/Paginas/Alimentacion-saludable.aspx" target="_blank" rel="noopener">Guías de alimentación saludable (Minsalud)</a></li>
-            <li><a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/SNA/Guia-Alimentacion-saludable.pdf" target="_blank" rel="noopener">Guía PDF: Alimentación saludable</a></li>
+            <li>
+              <a href="https://www.minsalud.gov.co/" target="_blank" rel="noopener">
+                Ministerio de Salud y Protección Social
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.minsalud.gov.co/salud/publica/HS/Paginas/Alimentacion-saludable.aspx" target="_blank" rel="noopener">
+                Guías de alimentación saludable
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/VS/PP/SNA/Guia-Alimentacion-saludable.pdf" target="_blank" rel="noopener">
+                Guía PDF: Alimentación saludable
+              </a>
+            </li>
           </ul>
 
           <p>Descargue la guía resumida localmente:</p>
-          <p><a class="btn" href="/mnt/data/alimentacion_saludable.html" download>Descargar guía resumida (HTML)</a></p>
+
+          <p>
+            <a class="btn" href="/mnt/data/alimentacion_saludable.html" download>
+              Descargar guía resumida (HTML)
+            </a>
+          </p>
+
         </section>
+
       </main>
 
       <aside class="sidebar">
+
         <div class="card">
+
           <h3>Atención personalizada</h3>
-          <p>Si padece una condición crónica, consulte a su médico o nutricionista antes de cambiar su dieta.</p>
+
+          <img
+            class="mini-img"
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
+            alt="Nutricionista"
+          >
+
+          <p>
+            Consulte a su médico o nutricionista antes de cambiar su dieta.
+          </p>
+
         </div>
 
         <div class="card">
-          <h3>Contacto útil</h3>
-          <p>Teléfonos y centros de atención de su EPS o secretaría de salud local.</p>
+
+          <h3>Actividad física</h3>
+
+          <img
+            class="mini-img"
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop"
+            alt="Actividad física"
+          >
+
+          <p>
+            La actividad física complementa una alimentación saludable.
+          </p>
+
         </div>
 
         <div class="card">
+
           <h3>Mensaje clave</h3>
-          <p>Control de porciones + alimentos poco procesados = mejor manejo de enfermedades crónicas.</p>
+
+          <img
+            class="mini-img"
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop"
+            alt="Comida balanceada"
+          >
+
+          <p>
+            Control de porciones + alimentos poco procesados = mejor manejo de enfermedades crónicas.
+          </p>
+
         </div>
+
       </aside>
+
     </div>
 
     <footer>
-      Documento informativo basado en contenidos del Ministerio de Salud y Protección Social de Colombia. Consulte las páginas oficiales para guías detalladas y actualizadas.
+      Documento informativo basado en contenidos del Ministerio de Salud y Protección Social de Colombia.
+      Consulte las páginas oficiales para guías detalladas y actualizadas.
     </footer>
+
   </div>
+
 </body>
 </html>
